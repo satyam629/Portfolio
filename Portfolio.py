@@ -1,20 +1,12 @@
 import streamlit as st
-from PIL import Image
-import requests
-from io import BytesIO
 
 # Set up the page layout and title
 st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
 
-# Load logos from valid URLs
+# Valid image URLs (SVG format)
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
 snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/en/e/e9/Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
-
-# Fetch the logos using requests
-aws_logo = Image.open(BytesIO(requests.get(aws_logo_url).content))
-snowflake_logo = Image.open(BytesIO(requests.get(snowflake_logo_url).content))
-pyspark_logo = Image.open(BytesIO(requests.get(pyspark_logo_url).content))
 
 # Header Section
 st.title("Satyam")
@@ -36,11 +28,11 @@ st.header("Transforming Data with AWS, Snowflake & PySpark")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image(aws_logo, caption="AWS", width=150)
+    st.image(aws_logo_url, caption="AWS", width=150)
 with col2:
-    st.image(snowflake_logo, caption="Snowflake", width=150)
+    st.image(snowflake_logo_url, caption="Snowflake", width=150)
 with col3:
-    st.image(pyspark_logo, caption="PySpark", width=150)
+    st.image(pyspark_logo_url, caption="PySpark", width=150)
 
 # About Section
 st.header("About Me")
@@ -55,11 +47,11 @@ st.write("I have hands-on experience with the following technologies and tools:"
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image(aws_logo, caption="AWS", width=100)
+    st.image(aws_logo_url, caption="AWS", width=100)
 with col2:
-    st.image(snowflake_logo, caption="Snowflake", width=100)
+    st.image(snowflake_logo_url, caption="Snowflake", width=100)
 with col3:
-    st.image(pyspark_logo, caption="PySpark", width=100)
+    st.image(pyspark_logo_url, caption="PySpark", width=100)
 
 st.write("""
 - **AWS Glue, S3, Redshift**: Building data pipelines, storing and transforming data.
