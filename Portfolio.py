@@ -5,49 +5,57 @@ st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="wide")
 
 # Image URLs
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/en/e/e9/Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
+doodle_bg_url = "https://pngtree.com/freebackground/blue-carbon-background-with-sport-style-and-golden-light_1200848.html"  # Replace with your doodle image URL
 
 # Background Style
 st.markdown(
-    """
+    f"""
     <style>
-    .reportview-container {
-        background-color: #f8f9fa;
-    }
-    .header {
+    .reportview-container {{
+        background-image: url("{doodle_bg_url}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #f0f0f0;  /* Fallback color */
+    }}
+    .header {{
         text-align: center;
         padding: 40px 0;
-        background-color: #343a40;
+        background-color: rgba(52, 58, 64, 0.9);
         color: white;
-    }
-    h1, h2, h3 {
+    }}
+    h1, h2, h3 {{
         margin: 0;
-    }
-    nav {
+    }}
+    nav {{
         display: flex;
         justify-content: center;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.8);
         padding: 10px;
         border-radius: 8px;
         margin-bottom: 20px;
-    }
-    nav a {
+    }}
+    nav a {{
         margin: 0 15px;
         color: #343a40;
         text-decoration: none;
         font-weight: bold;
-    }
-    nav a:hover {
+    }}
+    nav a:hover {{
         text-decoration: underline;
-    }
-    .section {
+    }}
+    .section {{
         padding: 20px;
         margin: 20px 0;
-        background: white;
+        background: rgba(255, 255, 255, 0.9);  /* Semi-transparent white */
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }}
+    .section h3 {{
+        color: #343a40;
+    }}
     </style>
     """,
     unsafe_allow_html=True
