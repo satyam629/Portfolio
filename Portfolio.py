@@ -5,7 +5,7 @@ st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="center
 
 # Valid image URLs (SVG for AWS and PySpark, PNG for Snowflake)
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://logos-world.net/wp-content/uploads/2021/02/Snowflake-Logo-700x394.png"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/5/56/Snowflake_Logo.png"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
 
 # Header Section
