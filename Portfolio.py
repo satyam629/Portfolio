@@ -5,9 +5,9 @@ st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="wide")
 
 # Image URLs
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/en/e/e9/Snowflake_Logo.svg"
+snowflake_logo_url = "https://commons.wikimedia.org/wiki/File:Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
-doodle_bg_url = "https://pngtree.com/freebackground/blue-carbon-background-with-sport-style-and-golden-light_1200848.html"  # Replace with your doodle image URL
+doodle_bg_url = "https://your-doodle-background-image-url.com"  # Replace with your doodle image URL
 
 # Background Style
 st.markdown(
@@ -32,7 +32,7 @@ st.markdown(
     nav {{
         display: flex;
         justify-content: center;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 10px;
         border-radius: 8px;
         margin-bottom: 20px;
@@ -49,12 +49,31 @@ st.markdown(
     .section {{
         padding: 20px;
         margin: 20px 0;
-        background: rgba(255, 255, 255, 0.9);  /* Semi-transparent white */
+        background: rgba(255, 255, 255, 0.95);  /* Semi-transparent white */
+        border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }}
     .section h3 {{
         color: #343a40;
+    }}
+    .contact-form input, .contact-form textarea {{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }}
+    .contact-form button {{
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }}
+    .contact-form button:hover {{
+        background-color: #0056b3;
     }}
     </style>
     """,
@@ -95,7 +114,7 @@ st.markdown("<div class='section' id='skills'><h3>Skills</h3><ul><li>AWS Glue, S
 st.markdown("<div class='section' id='projects'><h3>Key Projects</h3><ul><li><strong>Data Warehousing for BASF:</strong> Optimized Snowflake data warehousing solutions, transforming large datasets using AWS Glue, achieving a 40% improvement in processing time.</li><li><strong>Cloud Migration for Pharmaceutical KPIs:</strong> Led the migration of legacy data warehouses to Snowflake on AWS, ensuring minimal downtime and increased scalability.</li></ul></div>", unsafe_allow_html=True)
 
 # Contact Section
-st.markdown("<div class='section' id='contact'><h3>Contact Me</h3><form>Send me a message:<br><input type='text' placeholder='Your Name'><br><input type='email' placeholder='Your Email'><br><textarea placeholder='Your Message'></textarea><br><button type='submit'>Send Message</button></form></div>", unsafe_allow_html=True)
+st.markdown("<div class='section' id='contact'><h3>Contact Me</h3><form class='contact-form'>Send me a message:<br><input type='text' placeholder='Your Name'><br><input type='email' placeholder='Your Email'><br><textarea placeholder='Your Message'></textarea><br><button type='submit'>Send Message</button></form></div>", unsafe_allow_html=True)
 
 # Add LinkedIn and Email links
 st.markdown("""
