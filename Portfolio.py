@@ -54,11 +54,11 @@ st.header("Transforming Data with AWS, Snowflake & PySpark")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image(aws_logo_url, caption="AWS", width=150, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(aws_logo_url, caption="AWS", width=150)}</div>', unsafe_allow_html=True)
 with col2:
-    st.image(snowflake_logo_url, caption="Snowflake", width=150, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(snowflake_logo_url, caption="Snowflake", width=150)}</div>', unsafe_allow_html=True)
 with col3:
-    st.image(pyspark_logo_url, caption="PySpark", width=150, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(pyspark_logo_url, caption="PySpark", width=150)}</div>', unsafe_allow_html=True)
 
 # About Section
 st.header("About Me", anchor="about")
@@ -75,11 +75,11 @@ st.write("I have hands-on experience with the following technologies and tools:"
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image(aws_logo_url, caption="AWS", width=100, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(aws_logo_url, caption="AWS", width=100)}</div>', unsafe_allow_html=True)
 with col2:
-    st.image(snowflake_logo_url, caption="Snowflake", width=100, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(snowflake_logo_url, caption="Snowflake", width=100)}</div>', unsafe_allow_html=True)
 with col3:
-    st.image(pyspark_logo_url, caption="PySpark", width=100, use_column_width=True, classes="hover-effect")
+    st.markdown(f'<div class="hover-effect">{st.image(pyspark_logo_url, caption="PySpark", width=100)}</div>', unsafe_allow_html=True)
 
 st.write("""
 - **AWS Glue, S3, Redshift**: Building data pipelines, storing and transforming data.
