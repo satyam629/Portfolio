@@ -5,7 +5,7 @@ st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="center
 
 # Valid image URLs (SVG for AWS and PySpark, PNG for Snowflake)
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/5/56/Snowflake_Logo.png"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
 
 # Header Section
@@ -14,15 +14,27 @@ st.subheader("Senior Data Engineer")
 st.write("Bengaluru, India · +91 9031294999 · satyam121satyam121@gmail.com")
 
 # Navigation
-st.markdown("""
-<nav style="background-color: #f0f0f0; padding: 10px; border-radius: 8px;">
-    <a href="#about">About</a> | 
-    <a href="#skills">Skills</a> | 
-    <a href="#projects">Projects</a> | 
-    <a href="#contact">Contact</a>
-</nav>
-""", unsafe_allow_html=True)
-
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url('https://images.unsplash.com/photo-1554222996-220a86e0b72b') no-repeat center center fixed; 
+        background-size: cover;
+        animation: fadeIn 3s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    h1, h2, h3 {
+        color: white; /* Change color for better contrast */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Hero Section with Logos
 st.header("Transforming Data with AWS, Snowflake & PySpark")
 col1, col2, col3 = st.columns(3)
