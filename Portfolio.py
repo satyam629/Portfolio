@@ -3,9 +3,9 @@ import streamlit as st
 # Set up the page layout and title
 st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
 
-# Image URLs
+# Valid image URLs (SVG for AWS and PySpark, PNG for Snowflake)
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/en/e/e9/Snowflake_Logo.svg"  # Changed to SVG format
+snowflake_logo_url = "https://logos-world.net/wp-content/uploads/2021/02/Snowflake-Logo-700x394.png"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
 
 # Header Section
@@ -30,7 +30,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.image(aws_logo_url, caption="AWS", width=150)
 with col2:
-    st.image(snowflake_logo_url, caption="Snowflake", width=150)  # SVG format
+    st.image(snowflake_logo_url, caption="Snowflake", width=150)  # Updated with new PNG logo
 with col3:
     st.image(pyspark_logo_url, caption="PySpark", width=150)
 
@@ -49,7 +49,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.image(aws_logo_url, caption="AWS", width=100)
 with col2:
-    st.image(snowflake_logo_url, caption="Snowflake", width=100)  # SVG format
+    st.image(snowflake_logo_url, caption="Snowflake", width=100)  # Updated with new PNG logo
 with col3:
     st.image(pyspark_logo_url, caption="PySpark", width=100)
 
