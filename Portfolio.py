@@ -5,76 +5,74 @@ st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="wide")
 
 # Image URLs
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://commons.wikimedia.org/wiki/File:Snowflake_Logo.svg"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
-doodle_bg_url = "https://your-doodle-background-image-url.com"  # Replace with your doodle image URL
+doodle_image_url = "https://your-doodle-image-url.com"  # Replace with a doodle image URL
 
 # Background Style
 st.markdown(
-    f"""
+    """
     <style>
-    .reportview-container {{
-        background-image: url("{doodle_bg_url}");
+    .reportview-container {
+        background-image: url('https://www.transparenttextures.com/patterns/dark_fabric.png'); /* Change to your chosen background */
         background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-color: #f0f0f0;  /* Fallback color */
-    }}
-    .header {{
+    }
+    .header {
         text-align: center;
         padding: 40px 0;
-        background-color: rgba(52, 58, 64, 0.9);
+        background-color: rgba(52, 58, 64, 0.8);
         color: white;
-    }}
-    h1, h2, h3 {{
+    }
+    h1, h2, h3 {
         margin: 0;
-    }}
-    nav {{
+    }
+    nav {
         display: flex;
         justify-content: center;
         background-color: rgba(255, 255, 255, 0.9);
         padding: 10px;
         border-radius: 8px;
         margin-bottom: 20px;
-    }}
-    nav a {{
+    }
+    nav a {
         margin: 0 15px;
         color: #343a40;
         text-decoration: none;
         font-weight: bold;
-    }}
-    nav a:hover {{
+    }
+    nav a:hover {
         text-decoration: underline;
-    }}
-    .section {{
+    }
+    .section {
         padding: 20px;
         margin: 20px 0;
-        background: rgba(255, 255, 255, 0.95);  /* Semi-transparent white */
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }}
-    .section h3 {{
-        color: #343a40;
-    }}
-    .contact-form input, .contact-form textarea {{
+        animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .contact-form input, .contact-form textarea {
         width: 100%;
         padding: 10px;
         margin-bottom: 10px;
         border-radius: 5px;
         border: 1px solid #ccc;
-    }}
-    .contact-form button {{
+    }
+    .contact-form button {
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
         background-color: #007bff;
         color: white;
         cursor: pointer;
-    }}
-    .contact-form button:hover {{
+    }
+    .contact-form button:hover {
         background-color: #0056b3;
-    }}
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -103,6 +101,9 @@ with col2:
     st.image(snowflake_logo_url, caption="Snowflake", width=150)
 with col3:
     st.image(pyspark_logo_url, caption="PySpark", width=150)
+
+# Doodle Image Section
+st.image(doodle_image_url, caption="Data Engineer Doodle", use_column_width=True)
 
 # About Section
 st.markdown("<div class='section' id='about'><h3>About Me</h3><p>I am a Senior Data Engineer with 3+ years of experience, specializing in transitioning legacy data warehouses to Snowflake on AWS. I have expertise in AWS Glue, Snowpark, PySpark, and SQL, focusing on optimizing ETL pipelines for large-scale analytics.</p></div>", unsafe_allow_html=True)
