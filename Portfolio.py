@@ -1,0 +1,98 @@
+import streamlit as st
+from PIL import Image
+
+# Load Logos
+aws_logo = Image.open('aws-logo.png')
+snowflake_logo = Image.open('snowflake-logo.png')
+pyspark_logo = Image.open('pyspark-logo.png')
+
+# Set up the layout and title
+st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
+
+# Header Section
+st.title("Satyam")
+st.subheader("Senior Data Engineer")
+st.write("Bengaluru, India · +91 9031294999 · satyam121satyam121@gmail.com")
+
+# Navigation
+st.markdown("""
+<nav style="background-color: #f0f0f0; padding: 10px; border-radius: 8px;">
+    <a href="#about">About</a> | 
+    <a href="#skills">Skills</a> | 
+    <a href="#projects">Projects</a> | 
+    <a href="#contact">Contact</a>
+</nav>
+""", unsafe_allow_html=True)
+
+# Hero Section with Logos
+st.header("Transforming Data with AWS, Snowflake & PySpark")
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.image(aws_logo, caption="AWS", width=150)
+with col2:
+    st.image(snowflake_logo, caption="Snowflake", width=150)
+with col3:
+    st.image(pyspark_logo, caption="PySpark", width=150)
+
+# About Section
+st.header("About Me")
+st.write("""
+I am a Senior Data Engineer with 3+ years of experience, specializing in transitioning legacy data warehouses to Snowflake on AWS. 
+I have expertise in AWS Glue, Snowpark, PySpark, and SQL, focusing on optimizing ETL pipelines for large-scale analytics.
+""")
+
+# Skills Section
+st.header("Skills")
+st.write("I have hands-on experience with the following technologies and tools:")
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.image(aws_logo, caption="AWS", width=100)
+with col2:
+    st.image(snowflake_logo, caption="Snowflake", width=100)
+with col3:
+    st.image(pyspark_logo, caption="PySpark", width=100)
+
+st.write("""
+- **AWS Glue, S3, Redshift**: Building data pipelines, storing and transforming data.
+- **Snowflake**: Data warehousing, Snowpark, advanced SQL for data processing.
+- **PySpark**: Efficient processing of big data using partitioning, bucketing, and transformations.
+- **SQL**: Strong command in SQL including pivoting, stored procedures, and optimizing data transformations.
+""")
+
+# Projects Section
+st.header("Key Projects")
+st.subheader("Data Warehousing for BASF")
+st.write("""
+Optimized Snowflake data warehousing solutions, transforming large datasets using AWS Glue, achieving a 40% improvement in processing time.
+""")
+st.subheader("Cloud Migration for Pharmaceutical KPIs")
+st.write("""
+Led the migration of legacy data warehouses to Snowflake on AWS, ensuring minimal downtime and increased scalability.
+""")
+
+# Contact Section
+st.header("Contact Me")
+with st.form("contact_form"):
+    st.write("Send me a message:")
+    name = st.text_input("Your Name")
+    email = st.text_input("Your Email")
+    message = st.text_area("Your Message")
+    submit_button = st.form_submit_button(label="Send Message")
+
+    if submit_button:
+        st.success(f"Thank you {name}, your message has been sent!")
+
+# Add LinkedIn and Email links
+st.markdown("""
+### Or reach me on:
+- [LinkedIn](https://www.linkedin.com/in/satyam-51a740102/)
+- Email: satyam121satyam121@gmail.com
+""")
+
+# Footer
+st.markdown("""
+<hr>
+<p style="text-align:center;">&copy; 2024 Satyam - Senior Data Engineer</p>
+""", unsafe_allow_html=True)
