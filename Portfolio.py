@@ -3,28 +3,20 @@ import streamlit as st
 # Set up the page layout and title
 st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="wide")
 
-# Image URLs
-aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
-pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
-doodle_image_url = "https://your-doodle-image-url.com"  # Replace with a doodle image URL
-
-# Background Style
+# Custom Fonts
 st.markdown(
     """
     <style>
-    .reportview-container {
-        background-image: url('https://www.transparenttextures.com/patterns/dark_fabric.png'); /* Change to your chosen background */
-        background-size: cover;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
     }
     .header {
         text-align: center;
         padding: 40px 0;
-        background-color: rgba(52, 58, 64, 0.8);
+        background-color: #343a40;
         color: white;
-    }
-    h1, h2, h3 {
-        margin: 0;
+        border-bottom: 4px solid #007bff;
     }
     nav {
         display: flex;
@@ -36,24 +28,19 @@ st.markdown(
     }
     nav a {
         margin: 0 15px;
-        color: #343a40;
+        color: #007bff;
         text-decoration: none;
         font-weight: bold;
-    }
-    nav a:hover {
-        text-decoration: underline;
     }
     .section {
         padding: 20px;
         margin: 20px 0;
-        background: rgba(255, 255, 255, 0.95);
+        background: white;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        animation: fadeIn 0.5s ease-in;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    .skill {
+        margin: 10px 0;
     }
     .contact-form input, .contact-form textarea {
         width: 100%;
@@ -84,38 +71,57 @@ st.markdown("<div class='header'><h1>Satyam</h1><h2>Senior Data Engineer</h2><p>
 # Navigation
 st.markdown("""
 <nav>
-    <a href="#about">About</a> | 
-    <a href="#skills">Skills</a> | 
-    <a href="#projects">Projects</a> | 
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 """, unsafe_allow_html=True)
 
-# Hero Section with Logos
+# Hero Section
 st.header("Transforming Data with AWS, Snowflake & PySpark")
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.image(aws_logo_url, caption="AWS", width=150)
-with col2:
-    st.image(snowflake_logo_url, caption="Snowflake", width=150)
-with col3:
-    st.image(pyspark_logo_url, caption="PySpark", width=150)
-
-# Doodle Image Section
-st.image(doodle_image_url, caption="Data Engineer Doodle", use_column_width=True)
+st.image("https://your-hero-image-url.com", use_column_width=True)  # Add a hero image URL
 
 # About Section
-st.markdown("<div class='section' id='about'><h3>About Me</h3><p>I am a Senior Data Engineer with 3+ years of experience, specializing in transitioning legacy data warehouses to Snowflake on AWS. I have expertise in AWS Glue, Snowpark, PySpark, and SQL, focusing on optimizing ETL pipelines for large-scale analytics.</p></div>", unsafe_allow_html=True)
+st.markdown("<div class='section' id='about'><h3>About Me</h3><p>I am a Senior Data Engineer with 3+ years of experience, specializing in transitioning legacy data warehouses to Snowflake on AWS. My expertise includes AWS Glue, Snowpark, PySpark, and SQL, focusing on optimizing ETL pipelines for large-scale analytics.</p></div>", unsafe_allow_html=True)
 
 # Skills Section
-st.markdown("<div class='section' id='skills'><h3>Skills</h3><ul><li>AWS Glue, S3, Redshift: Building data pipelines, storing and transforming data.</li><li>Snowflake: Data warehousing, Snowpark, advanced SQL for data processing.</li><li>PySpark: Efficient processing of big data using partitioning, bucketing, and transformations.</li><li>SQL: Strong command in SQL including pivoting, stored procedures, and optimizing data transformations.</li></ul></div>", unsafe_allow_html=True)
+st.markdown("<div class='section' id='skills'><h3>Skills</h3>", unsafe_allow_html=True)
+skills = {
+    "AWS Glue, S3, Redshift": "Building data pipelines, storing and transforming data.",
+    "Snowflake": "Data warehousing, Snowpark, advanced SQL for data processing.",
+    "PySpark": "Efficient processing of big data using partitioning, bucketing, and transformations.",
+    "SQL": "Strong command in SQL including pivoting, stored procedures, and optimizing data transformations."
+}
 
-# Projects Section
-st.markdown("<div class='section' id='projects'><h3>Key Projects</h3><ul><li><strong>Data Warehousing for BASF:</strong> Optimized Snowflake data warehousing solutions, transforming large datasets using AWS Glue, achieving a 40% improvement in processing time.</li><li><strong>Cloud Migration for Pharmaceutical KPIs:</strong> Led the migration of legacy data warehouses to Snowflake on AWS, ensuring minimal downtime and increased scalability.</li></ul></div>", unsafe_allow_html=True)
+for skill, description in skills.items():
+    st.markdown(f"<div class='skill'><strong>{skill}</strong><br>{description}</div>", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Projects Section with Carousel
+st.markdown("<div class='section' id='projects'><h3>Key Projects</h3>", unsafe_allow_html=True)
+projects = [
+    {
+        "title": "Data Warehousing for BASF",
+        "description": "Optimized Snowflake data warehousing solutions, transforming large datasets using AWS Glue, achieving a 40% improvement in processing time.",
+        "image": "https://your-project-image-url.com"  # Replace with project image URL
+    },
+    {
+        "title": "Cloud Migration for Pharmaceutical KPIs",
+        "description": "Led the migration of legacy data warehouses to Snowflake on AWS, ensuring minimal downtime and increased scalability.",
+        "image": "https://your-project-image-url.com"  # Replace with project image URL
+    },
+]
+
+for project in projects:
+    st.image(project["image"], width=300)  # Project image
+    st.markdown(f"<strong>{project['title']}</strong><br>{project['description']}<br><br>", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Contact Section
-st.markdown("<div class='section' id='contact'><h3>Contact Me</h3><form class='contact-form'>Send me a message:<br><input type='text' placeholder='Your Name'><br><input type='email' placeholder='Your Email'><br><textarea placeholder='Your Message'></textarea><br><button type='submit'>Send Message</button></form></div>", unsafe_allow_html=True)
+st.markdown("<div class='section' id='contact'><h3>Contact Me</h3><form class='contact-form'>Send me a message:<br><input type='text' placeholder='Your Name' required><br><input type='email' placeholder='Your Email' required><br><textarea placeholder='Your Message' required></textarea><br><button type='submit'>Send Message</button></form></div>", unsafe_allow_html=True)
 
 # Add LinkedIn and Email links
 st.markdown("""
