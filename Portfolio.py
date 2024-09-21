@@ -1,3 +1,6 @@
+
+import streamlit as st
+
 # Set up the page layout and title
 st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
 
