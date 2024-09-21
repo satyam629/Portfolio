@@ -1,47 +1,19 @@
-import streamlit as st
-
 # Set up the page layout and title
 st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
 
 # Valid image URLs (SVG for AWS and PySpark, PNG for Snowflake)
 aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-snowflake_logo_url = "https://logos-world.net/wp-content/uploads/2021/02/Snowflake-Logo-700x394.png"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
 pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
 
-# Custom Styles for Animation
-st.markdown(
-    """
-    <style>
-    .fade-in {
-        animation: fadeIn 1s ease-in forwards;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    .hover-effect:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s;
-    }
-    nav {
-        background-color: #f0f0f0; 
-        padding: 10px; 
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Header Section
-st.title("Satyam", anchor="top")
+st.title("Satyam")
 st.subheader("Senior Data Engineer")
 st.write("Bengaluru, India · +91 9031294999 · satyam121satyam121@gmail.com")
 
 # Navigation
 st.markdown("""
-<nav>
+<nav style="background-color: #f0f0f0; padding: 10px; border-radius: 8px;">
     <a href="#about">About</a> | 
     <a href="#skills">Skills</a> | 
     <a href="#projects">Projects</a> | 
@@ -54,32 +26,30 @@ st.header("Transforming Data with AWS, Snowflake & PySpark")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown(f'<div class="hover-effect">{st.image(aws_logo_url, caption="AWS", width=150)}</div>', unsafe_allow_html=True)
+    st.image(aws_logo_url, caption="AWS", width=150)
 with col2:
-    st.markdown(f'<div class="hover-effect">{st.image(snowflake_logo_url, caption="Snowflake", width=150)}</div>', unsafe_allow_html=True)
+    st.image(snowflake_logo_url, caption="Snowflake", width=150)  # Updated with new PNG logo
 with col3:
-    st.markdown(f'<div class="hover-effect">{st.image(pyspark_logo_url, caption="PySpark", width=150)}</div>', unsafe_allow_html=True)
+    st.image(pyspark_logo_url, caption="PySpark", width=150)
 
 # About Section
-st.header("About Me", anchor="about")
-st.markdown('<div class="fade-in">', unsafe_allow_html=True)
+st.header("About Me")
 st.write("""
 I am a Senior Data Engineer with 3+ years of experience, specializing in transitioning legacy data warehouses to Snowflake on AWS. 
 I have expertise in AWS Glue, Snowpark, PySpark, and SQL, focusing on optimizing ETL pipelines for large-scale analytics.
 """)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # Skills Section
-st.header("Skills", anchor="skills")
+st.header("Skills")
 st.write("I have hands-on experience with the following technologies and tools:")
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.markdown(f'<div class="hover-effect">{st.image(aws_logo_url, caption="AWS", width=100)}</div>', unsafe_allow_html=True)
+    st.image(aws_logo_url, caption="AWS", width=100)
 with col2:
-    st.markdown(f'<div class="hover-effect">{st.image(snowflake_logo_url, caption="Snowflake", width=100)}</div>', unsafe_allow_html=True)
+    st.image(snowflake_logo_url, caption="Snowflake", width=100)  # Updated with new PNG logo
 with col3:
-    st.markdown(f'<div class="hover-effect">{st.image(pyspark_logo_url, caption="PySpark", width=100)}</div>', unsafe_allow_html=True)
+    st.image(pyspark_logo_url, caption="PySpark", width=100)
 
 st.write("""
 - **AWS Glue, S3, Redshift**: Building data pipelines, storing and transforming data.
@@ -89,7 +59,7 @@ st.write("""
 """)
 
 # Projects Section
-st.header("Key Projects", anchor="projects")
+st.header("Key Projects")
 st.subheader("Data Warehousing for BASF")
 st.write("""
 Optimized Snowflake data warehousing solutions, transforming large datasets using AWS Glue, achieving a 40% improvement in processing time.
@@ -100,7 +70,7 @@ Led the migration of legacy data warehouses to Snowflake on AWS, ensuring minima
 """)
 
 # Contact Section
-st.header("Contact Me", anchor="contact")
+st.header("Contact Me")
 with st.form("contact_form"):
     st.write("Send me a message:")
     name = st.text_input("Your Name")
