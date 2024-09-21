@@ -2,17 +2,19 @@ import streamlit as st
 from PIL import Image
 import requests
 from io import BytesIO
-# Load Logos
-# Load images from URLs
-aws_logo_url = "https://path/to/aws-logo.png"
-snowflake_logo_url = "https://path/to/snowflake-logo.png"
-pyspark_logo_url = "https://path/to/pyspark-logo.png"
 
+# Set up the page layout and title
+st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
+
+# Load logos from valid URLs
+aws_logo_url = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+snowflake_logo_url = "https://upload.wikimedia.org/wikipedia/en/e/e9/Snowflake_Logo.svg"
+pyspark_logo_url = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
+
+# Fetch the logos using requests
 aws_logo = Image.open(BytesIO(requests.get(aws_logo_url).content))
 snowflake_logo = Image.open(BytesIO(requests.get(snowflake_logo_url).content))
 pyspark_logo = Image.open(BytesIO(requests.get(pyspark_logo_url).content))
-# Set up the layout and title
-st.set_page_config(page_title="Satyam - Data Engineer Portfolio", layout="centered")
 
 # Header Section
 st.title("Satyam")
