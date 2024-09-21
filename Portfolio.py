@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
-
+import requests
+from io import BytesIO
 # Load Logos
 # Load images from URLs
 aws_logo_url = "https://path/to/aws-logo.png"
